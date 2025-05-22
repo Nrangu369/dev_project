@@ -1,0 +1,90 @@
+1 create a docker image from docker file
+
+--> docker build -t my-image .
+
+2 Create a Container From an existing Image
+
+--> docker run -it -d <image-name>
+
+-d = Detached mode, means Docker container runs in the background of your terminal.
+
+3 create a Docker container through command line.
+
+--> docker container run -d --name=nginx-container nginx-image2
+
+------------------------------------------------------------------------
+
+docker tag <repository name/image-name:version>
+
+docker tag rangu369/myimage123:V1.0
+
+doker push rangu369/myimage123:V1.0
+===================================================
+
+
+master and slave configuration steps:
+
+1 install two ec2 instances
+one for master and one for slave node, after launching instances you need to install java on both the instances
+
+2 on master node 
+install jenkins and after setting up jenkins default dashboard.
+3 next Create a user and generate ssh keys on slave node 
+4 afterwards Copy keys on master node at /var/lib/jenkins/.ssh
+5 Join slave node to master
+To join the 
+slave node to Jenkins Master, go to Manage jenkins go to nodes and create a new node 
+there u can give <node name > and as per ur requirement Number of executors - 1 u can 
+6 add Remote root directory - /home/prayag < This is the workspace directory for agent, where it stores data downloaded by the Job>
+
+7 Usage - Use this mode as much as possible
+
+8 Launch method - Launch agents via SSH
+
+9 Host - 192.168.0.103
+
+10 Credentials - use ssh username / private key options
+
+11 Host Key Verification Strategy - Know hosts key strategy
+
+12 Save and check that new slave node is added and is in sync
+
+finally we can see We can see Jenkins Slave is launching .. Agent status - "is being launched"
+================================================================================================
+
+Q. where can you modify in jenkins jobs should be run on slave node?
+
+suppose u can choose free style project >> in general section >> there u can see <Restrict where this project can be run)
+
+there u can select ur jenkins slave. which ur already created.
+
+
+
+====================================================================
+today's task
+---------------
+
+1. create eks cluster and practice all tasks and command
+
+2 and practice on autoscaling of load
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
